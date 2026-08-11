@@ -2,7 +2,7 @@
 
 # 概要
 
-これは、Pixiv Fanbox上のファイルを一括ダウンロードするためのChromeブラウザ拡張機能です。
+これは、Pixiv Fanbox上のファイルを一括ダウンロードするためのFirefoxブラウザ拡張機能です。
 
 ファイルタイプのフィルタリング、ファイル名のカスタマイズ、複数の言語に対応しています。
 
@@ -12,27 +12,18 @@
 
 # インストール
 
-ChromeまたはEdgeブラウザの使用をお勧めします。
+Firefox 142以降が必要です。
 
-## オンラインインストール
+開発版を一時的にインストールするには、`about:debugging#/runtime/this-firefox` を開き、「一時的なアドオンを読み込む」から `dist/manifest.json` を選択します。
 
-Chrome Webストアからこの拡張機能をインストールできます：
+ソースからビルドするには、Node.jsとnpmをインストールして次を実行します。
 
-[Pixiv Fanbox Downloader](https://chrome.google.com/webstore/detail/pixiv-fanbox-downloader/ihnfpdchjnmlehnoeffgcbakfmdjcckn)
+```sh
+npm install
+npm run build
+```
 
-## オフラインインストール
-
-Pixivダウンローダーのオフラインインストールチュートリアルを参照してください：
-[オフラインインストール](https://xuejianxianzun.github.io/PBDWiki/#/en/OfflineInstallation)
-
-1点だけ異なる点があります：上記のチュートリアルではPixivダウンローダーのzipファイルをダウンロードするよう指示されていますが、代わりにFanboxダウンローダーのzipファイルをダウンロードしてください。このリポジトリの[releasesページ](https://github.com/xuejianxianzun/PixivFanboxDownloader/releases)からpixivfanboxDownloader.zipをダウンロードできます。
-
-## Androidでの使用
-
-以下のチュートリアルを参照してください：
-[Microsoft Edge Canaryブラウザへのインストール](https://xuejianxianzun.github.io/PBDWiki/#/en/MicrosoftEdgeCanary)
-
-1点だけ異なる点があります：上記のチュートリアルではPixivダウンローダーのcrxファイルをダウンロードするよう指示されていますが、代わりにFanboxダウンローダーのcrxファイルをダウンロードしてください。このリポジトリの[releasesページ](https://github.com/xuejianxianzun/PixivFanboxDownloader/releases)からPixiv-Fanbox-Downloader.crxをダウンロードできます。
+Firefox正式版に永続的にインストールするには、生成されたZIPをMozillaで署名する必要があります。
 
 # 使用方法
 

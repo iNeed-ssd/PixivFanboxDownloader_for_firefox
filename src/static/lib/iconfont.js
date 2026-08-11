@@ -13,9 +13,10 @@
   if (a && !t.__iconfont__svg__cssinject__) {
     t.__iconfont__svg__cssinject__ = !0
     try {
-      document.write(
-        '<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>'
-      )
+      var style = document.createElement('style')
+      style.textContent =
+        '.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}'
+      ;(document.head || document.documentElement).appendChild(style)
     } catch (t) {
       console && console.log(t)
     }
@@ -24,19 +25,25 @@
     i || ((i = !0), o())
   }
   ;(c = function () {
-    var t, c, e, o
-    ;((o = document.createElement('div')).innerHTML = s),
-      (s = null),
-      (e = o.getElementsByTagName('svg')[0]) &&
-        (e.setAttribute('aria-hidden', 'true'),
-        (e.style.position = 'absolute'),
-        (e.style.width = 0),
-        (e.style.height = 0),
-        (e.style.overflow = 'hidden'),
-        (t = e),
-        (c = document.body).firstChild
-          ? ((o = t), (e = c.firstChild).parentNode.insertBefore(o, e))
-          : c.appendChild(t))
+    var svgDocument = new DOMParser().parseFromString(s, 'image/svg+xml')
+    s = null
+    var svg = svgDocument.documentElement
+    if (!svg || svg.nodeName.toLowerCase() !== 'svg') {
+      return
+    }
+
+    svg = document.importNode(svg, true)
+    svg.setAttribute('aria-hidden', 'true')
+    svg.style.position = 'absolute'
+    svg.style.width = 0
+    svg.style.height = 0
+    svg.style.overflow = 'hidden'
+
+    if (document.body.firstChild) {
+      document.body.insertBefore(svg, document.body.firstChild)
+    } else {
+      document.body.appendChild(svg)
+    }
   }),
     document.addEventListener
       ? ~['complete', 'loaded', 'interactive'].indexOf(document.readyState)

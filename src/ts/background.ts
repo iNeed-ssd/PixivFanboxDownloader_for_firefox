@@ -1,5 +1,6 @@
 import { DonwloadListData, SendToBackEndData } from './download/DownloadType'
 import { totalDownload } from './TotalDownload'
+import { getLocalStorage } from './WebExtension'
 
 // 当点击扩展图标时，显示/隐藏下载面板
 chrome.action.onClicked.addListener(function (tab) {
@@ -36,52 +37,12 @@ type url = string
 type name = string
 const fileNameList: Map<url, name> = new Map()
 
-// 接收下载请求
-chrome.runtime.onMessage.addListener(async function (
-  msg: SendToBackEndData,
-  sender,
-) {
+// 接收下载请求。监听器本身不能声明为 async，否则 Firefox 会认为它会响应
+// 每一条消息，导致同一后台页中的其他 onMessage 监听器无法响应。
+chrome.runtime.onMessage.addListener(function (msg: SendToBackEndData, sender) {
   // 接收下载任务
   if (msg.msg === 'send_download') {
-    // 当处于初始状态时，或者变量被回收了，就从存储中读取数据储存在变量中
-    // 之后每当要使用这两个数据时，从变量读取，而不是从存储中获得。这样就解决了数据不同步的问题，而且性能更高
-    if (Object.keys(batchNo).length === 0) {
-      const data = await chrome.storage.local.get(['batchNo', 'dlData'])
-      batchNo = (data.batchNo as batchNoType) || {}
-      dlData = (data.dlData as DonwloadListData) || {}
-    }
-
-    const tabId = sender.tab!.id!
-    // 如果开始了新一批的下载，重设批次编号，清空下载索引
-    if (batchNo[tabId] !== msg.taskBatch) {
-      batchNo[tabId] = msg.taskBatch
-      chrome.storage.local.set({ batchNo })
-    }
-
-    fileNameList.set(msg.fileUrl, msg.fileName)
-
-    // 开始下载
-    chrome.downloads.download(
-      {
-        url: msg.fileUrl,
-        filename: msg.fileName,
-        conflictAction: 'uniquify',
-        saveAs: false,
-      },
-      (id) => {
-        // id 是 Chrome 新建立的下载任务的 id
-        dlData[id] = {
-          url: msg.fileUrl,
-          id: msg.id,
-          tabId: tabId,
-          uuid: false,
-          size: -1,
-        }
-        chrome.storage.local.set({ dlData })
-      },
-    )
-
-    return false
+    void startDownload(msg, sender)
   } else if (msg.msg === 'save_file_no_replay') {
     // 保存不需要返回下载状态的文件
     chrome.downloads.download({
@@ -91,7 +52,52 @@ chrome.runtime.onMessage.addListener(async function (
       saveAs: false,
     })
   }
+
+  return false
 })
+
+async function startDownload(
+  msg: SendToBackEndData,
+  sender: chrome.runtime.MessageSender,
+) {
+  // 当处于初始状态时，或者变量被回收了，就从存储中读取数据储存在变量中
+  // 之后每当要使用这两个数据时，从变量读取，而不是从存储中获得。这样就解决了数据不同步的问题，而且性能更高
+  if (Object.keys(batchNo).length === 0) {
+    const data = await getLocalStorage(['batchNo', 'dlData'])
+    batchNo = (data.batchNo as batchNoType) || {}
+    dlData = (data.dlData as DonwloadListData) || {}
+  }
+
+  const tabId = sender.tab!.id!
+  // 如果开始了新一批的下载，重设批次编号，清空下载索引
+  if (batchNo[tabId] !== msg.taskBatch) {
+    batchNo[tabId] = msg.taskBatch
+    chrome.storage.local.set({ batchNo })
+  }
+
+  fileNameList.set(msg.fileUrl, msg.fileName)
+
+  // 开始下载
+  chrome.downloads.download(
+    {
+      url: msg.fileUrl,
+      filename: msg.fileName,
+      conflictAction: 'uniquify',
+      saveAs: false,
+    },
+    (id) => {
+      // id 是 Chrome 新建立的下载任务的 id
+      dlData[id] = {
+        url: msg.fileUrl,
+        id: msg.id,
+        tabId: tabId,
+        uuid: false,
+        size: -1,
+      }
+      chrome.storage.local.set({ dlData })
+    },
+  )
+}
 
 // 判断文件名是否变成了 UUID 格式。因为文件名处于整个绝对路径的中间，所以没加首尾标记 ^ $
 const UUIDRegexp =
@@ -104,7 +110,7 @@ chrome.downloads.onChanged.addListener(async function (detail) {
   // 如果有数据，就是本扩展建立的下载，所以不会监听到非本扩展建立的下载
   let data = dlData[detail.id]
   if (!data) {
-    const getData = await chrome.storage.local.get(['dlData'])
+    const getData = await getLocalStorage(['dlData'])
     dlData = (getData.dlData as DonwloadListData) || {}
     data = dlData[detail.id]
   }

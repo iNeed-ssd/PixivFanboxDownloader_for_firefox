@@ -1,12 +1,15 @@
-let _wr = function (type) {
-  let orig = history[type]
-  return function () {
-    let rv = orig.apply(this, arguments)
-    let e = new Event(type)
-    e.arguments = arguments
-    window.dispatchEvent(e)
-    return rv
+;(() => {
+  const wrapHistoryMethod = function (type) {
+    const original = history[type]
+    return function () {
+      const result = original.apply(this, arguments)
+      const event = new Event(type)
+      event.arguments = arguments
+      window.dispatchEvent(event)
+      return result
+    }
   }
-}
-history.pushState = _wr('pushState')
-history.replaceState = _wr('replaceState')
+
+  history.pushState = wrapHistoryMethod('pushState')
+  history.replaceState = wrapHistoryMethod('replaceState')
+})()

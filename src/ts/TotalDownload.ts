@@ -1,3 +1,5 @@
+import { getLocalStorage } from './WebExtension'
+
 class TotalDownload {
   /** 记录每天的下载总体积。key 是当天的 date，value 是当天的下载总量（字节数） */
   private data: { [key: string]: number } = {}
@@ -45,7 +47,7 @@ class TotalDownload {
   }
 
   private async restore() {
-    const result = await chrome.storage.local.get(['totalDownload'])
+    const result = await getLocalStorage(['totalDownload'])
     this.data = (result.totalDownload as { [key: string]: number }) || {}
   }
 

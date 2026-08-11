@@ -2,11 +2,11 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/ts/API.ts":
+/***/ "./src/ts/API.ts"
 /*!***********************!*\
   !*** ./src/ts/API.ts ***!
   \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -130,13 +130,13 @@ class API {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/BG.ts":
+/***/ "./src/ts/BG.ts"
 /*!**********************!*\
   !*** ./src/ts/BG.ts ***!
   \**********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -308,13 +308,13 @@ const bg = new BG();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/BoldKeywords.ts":
+/***/ "./src/ts/BoldKeywords.ts"
 /*!********************************!*\
   !*** ./src/ts/BoldKeywords.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -346,13 +346,13 @@ class BoldKeywords {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/CenterPanel.ts":
+/***/ "./src/ts/CenterPanel.ts"
 /*!*******************************!*\
   !*** ./src/ts/CenterPanel.ts ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Lang__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Lang */ "./src/ts/Lang.ts");
@@ -541,13 +541,13 @@ class CenterPanel {
 new CenterPanel();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/CheckUnsupportBrowser.ts":
+/***/ "./src/ts/CheckUnsupportBrowser.ts"
 /*!*****************************************!*\
   !*** ./src/ts/CheckUnsupportBrowser.ts ***!
   \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -611,13 +611,13 @@ class CheckUnsupportBrowser {
 new CheckUnsupportBrowser();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Colors.ts":
+/***/ "./src/ts/Colors.ts"
 /*!**************************!*\
   !*** ./src/ts/Colors.ts ***!
   \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -650,13 +650,13 @@ var Colors;
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Config.ts":
+/***/ "./src/ts/Config.ts"
 /*!**************************!*\
   !*** ./src/ts/Config.ts ***!
   \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -694,13 +694,13 @@ Config.whatIsNewFlagDefault = 'xuejian&saber';
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/CrawlInterval.ts":
+/***/ "./src/ts/CrawlInterval.ts"
 /*!*********************************!*\
   !*** ./src/ts/CrawlInterval.ts ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -769,13 +769,13 @@ const crawlInterval = new CrawlInterval();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/EVT.ts":
+/***/ "./src/ts/EVT.ts"
 /*!***********************!*\
   !*** ./src/ts/EVT.ts ***!
   \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -867,13 +867,13 @@ const EVT = new EVENT();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/FileName.ts":
+/***/ "./src/ts/FileName.ts"
 /*!****************************!*\
   !*** ./src/ts/FileName.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1099,13 +1099,13 @@ const fileName = new FileName();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Filter.ts":
+/***/ "./src/ts/Filter.ts"
 /*!**************************!*\
   !*** ./src/ts/Filter.ts ***!
   \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1392,13 +1392,13 @@ const filter = new Filter();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/FormHTML.ts":
+/***/ "./src/ts/FormHTML.ts"
 /*!****************************!*\
   !*** ./src/ts/FormHTML.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1885,13 +1885,13 @@ const formHtml = `<form class="settingForm">
 </form>`;
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/InitHomePage.ts":
+/***/ "./src/ts/InitHomePage.ts"
 /*!********************************!*\
   !*** ./src/ts/InitHomePage.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2013,13 +2013,13 @@ class InitHomePage extends _InitPageBase__WEBPACK_IMPORTED_MODULE_3__.InitPageBa
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/InitPage.ts":
+/***/ "./src/ts/InitPage.ts"
 /*!****************************!*\
   !*** ./src/ts/InitPage.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -2066,13 +2066,13 @@ class InitPage {
 new InitPage();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/InitPageBase.ts":
+/***/ "./src/ts/InitPageBase.ts"
 /*!********************************!*\
   !*** ./src/ts/InitPageBase.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2380,13 +2380,13 @@ class InitPageBase {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/InitPostListPage.ts":
+/***/ "./src/ts/InitPostListPage.ts"
 /*!************************************!*\
   !*** ./src/ts/InitPostListPage.ts ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2437,13 +2437,13 @@ class InitPostListPage extends _InitPageBase__WEBPACK_IMPORTED_MODULE_3__.InitPa
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/InitPostPage.ts":
+/***/ "./src/ts/InitPostPage.ts"
 /*!********************************!*\
   !*** ./src/ts/InitPostPage.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2515,13 +2515,13 @@ class InitPostPage extends _InitPageBase__WEBPACK_IMPORTED_MODULE_3__.InitPageBa
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/InitTagPage.ts":
+/***/ "./src/ts/InitTagPage.ts"
 /*!*******************************!*\
   !*** ./src/ts/InitTagPage.ts ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2567,13 +2567,13 @@ class InitTagPage extends _InitPageBase__WEBPACK_IMPORTED_MODULE_3__.InitPageBas
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Lang.ts":
+/***/ "./src/ts/Lang.ts"
 /*!************************!*\
   !*** ./src/ts/Lang.ts ***!
   \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2726,13 +2726,13 @@ const lang = new Lang();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/ListenPageSwitch.ts":
+/***/ "./src/ts/ListenPageSwitch.ts"
 /*!************************************!*\
   !*** ./src/ts/ListenPageSwitch.ts ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -2740,15 +2740,7 @@ __webpack_require__.r(__webpack_exports__);
 // 监听页面的无刷新切换
 class ListenPageSwitch {
     constructor() {
-        this.supportListenHistory();
         this.listenPageSwitch();
-    }
-    // 为监听 url 变化的事件提供支持
-    supportListenHistory() {
-        const s = document.createElement('script');
-        const url = chrome.runtime.getURL('lib/listen_history_change.js');
-        s.src = url;
-        document.head.appendChild(s);
     }
     // 无刷新切换页面时派发事件
     listenPageSwitch() {
@@ -2766,13 +2758,13 @@ class ListenPageSwitch {
 new ListenPageSwitch();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Log.ts":
+/***/ "./src/ts/Log.ts"
 /*!***********************!*\
   !*** ./src/ts/Log.ts ***!
   \***********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -2934,13 +2926,13 @@ const log = new Log();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/MsgBox.ts":
+/***/ "./src/ts/MsgBox.ts"
 /*!**************************!*\
   !*** ./src/ts/MsgBox.ts ***!
   \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3061,13 +3053,13 @@ const msgBox = new MsgBox();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/OpenCenterPanel.ts":
+/***/ "./src/ts/OpenCenterPanel.ts"
 /*!***********************************!*\
   !*** ./src/ts/OpenCenterPanel.ts ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -3117,13 +3109,13 @@ class OpenCenterPanel {
 new OpenCenterPanel();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/OutputPanel.ts":
+/***/ "./src/ts/OutputPanel.ts"
 /*!*******************************!*\
   !*** ./src/ts/OutputPanel.ts ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -3230,13 +3222,13 @@ class OutputPanel {
 new OutputPanel();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/PageType.ts":
+/***/ "./src/ts/PageType.ts"
 /*!****************************!*\
   !*** ./src/ts/PageType.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3345,13 +3337,13 @@ const pageType = new PageType();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/ProgressBar.ts":
+/***/ "./src/ts/ProgressBar.ts"
 /*!*******************************!*\
   !*** ./src/ts/ProgressBar.ts ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3460,13 +3452,13 @@ const progressBar = new ProgressBar();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/QuickCrawl.ts":
+/***/ "./src/ts/QuickCrawl.ts"
 /*!******************************!*\
   !*** ./src/ts/QuickCrawl.ts ***!
   \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -3527,13 +3519,13 @@ class QuickCrawl {
 new QuickCrawl();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/SaveData.ts":
+/***/ "./src/ts/SaveData.ts"
 /*!****************************!*\
   !*** ./src/ts/SaveData.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -3942,13 +3934,13 @@ const saveData = new SaveData();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/ShowHowToUse.ts":
+/***/ "./src/ts/ShowHowToUse.ts"
 /*!********************************!*\
   !*** ./src/ts/ShowHowToUse.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Lang__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Lang */ "./src/ts/Lang.ts");
@@ -3988,13 +3980,13 @@ class ShowHowToUse {
 new ShowHowToUse();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/ShowNotification.ts":
+/***/ "./src/ts/ShowNotification.ts"
 /*!************************************!*\
   !*** ./src/ts/ShowNotification.ts ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -4049,13 +4041,13 @@ class ShowNotification {
 new ShowNotification();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/ShowWhatIsNew.ts":
+/***/ "./src/ts/ShowWhatIsNew.ts"
 /*!*********************************!*\
   !*** ./src/ts/ShowWhatIsNew.ts ***!
   \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Lang__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Lang */ "./src/ts/Lang.ts");
@@ -4115,13 +4107,13 @@ class ShowWhatIsNew {
 new ShowWhatIsNew();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/States.ts":
+/***/ "./src/ts/States.ts"
 /*!**************************!*\
   !*** ./src/ts/States.ts ***!
   \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4207,13 +4199,13 @@ const states = new States();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Store.ts":
+/***/ "./src/ts/Store.ts"
 /*!*************************!*\
   !*** ./src/ts/Store.ts ***!
   \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4280,13 +4272,13 @@ const store = new Store();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Theme.ts":
+/***/ "./src/ts/Theme.ts"
 /*!*************************!*\
   !*** ./src/ts/Theme.ts ***!
   \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4409,13 +4401,13 @@ const theme = new Theme();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Tip.ts":
+/***/ "./src/ts/Tip.ts"
 /*!***********************!*\
   !*** ./src/ts/Tip.ts ***!
   \***********************/
-/***/ (() => {
+() {
 
 
 // 显示自定义的提示
@@ -4466,13 +4458,13 @@ class Tip {
 new Tip();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Toast.ts":
+/***/ "./src/ts/Toast.ts"
 /*!*************************!*\
   !*** ./src/ts/Toast.ts ***!
   \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4665,13 +4657,13 @@ const toast = new Toast();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/Tools.ts":
+/***/ "./src/ts/Tools.ts"
 /*!*************************!*\
   !*** ./src/ts/Tools.ts ***!
   \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4755,13 +4747,13 @@ class Tools {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/UnifiedURL.ts":
+/***/ "./src/ts/UnifiedURL.ts"
 /*!******************************!*\
   !*** ./src/ts/UnifiedURL.ts ***!
   \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EVT */ "./src/ts/EVT.ts");
@@ -4821,13 +4813,13 @@ class UnifiedURL {
 new UnifiedURL();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/Download.ts":
+/***/ "./src/ts/download/Download.ts"
 /*!*************************************!*\
   !*** ./src/ts/download/Download.ts ***!
   \*************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -4918,13 +4910,13 @@ class Download {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/DownloadControl.ts":
+/***/ "./src/ts/download/DownloadControl.ts"
 /*!********************************************!*\
   !*** ./src/ts/download/DownloadControl.ts ***!
   \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EVT */ "./src/ts/EVT.ts");
@@ -5340,13 +5332,13 @@ class DownloadControl {
 new DownloadControl();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/DownloadInterval.ts":
+/***/ "./src/ts/download/DownloadInterval.ts"
 /*!*********************************************!*\
   !*** ./src/ts/download/DownloadInterval.ts ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -5434,13 +5426,13 @@ const downloadInterval = new DownloadInterval();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/DownloadRecord.ts":
+/***/ "./src/ts/download/DownloadRecord.ts"
 /*!*******************************************!*\
   !*** ./src/ts/download/DownloadRecord.ts ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -5609,13 +5601,13 @@ const downloadRecord = new DownloadRecord();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/DownloadStates.ts":
+/***/ "./src/ts/download/DownloadStates.ts"
 /*!*******************************************!*\
   !*** ./src/ts/download/DownloadStates.ts ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -5690,13 +5682,13 @@ const downloadStates = new DownloadStates();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/GetTotalDownload.ts":
+/***/ "./src/ts/download/GetTotalDownload.ts"
 /*!*********************************************!*\
   !*** ./src/ts/download/GetTotalDownload.ts ***!
   \*********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -5769,13 +5761,13 @@ const getTotalDownload = new GetTotalDownload();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/Resume.ts":
+/***/ "./src/ts/download/Resume.ts"
 /*!***********************************!*\
   !*** ./src/ts/download/Resume.ts ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EVT */ "./src/ts/EVT.ts");
@@ -6016,13 +6008,13 @@ class Resume {
 new Resume();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/SaveFanCard.ts":
+/***/ "./src/ts/download/SaveFanCard.ts"
 /*!****************************************!*\
   !*** ./src/ts/download/SaveFanCard.ts ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -6144,8 +6136,10 @@ class SaveFanCard {
         // 粉丝卡的背景图是保存在 pixiv 上的，例如：
         // https://pixiv.pximg.net/c/1280x800_90_a2_g5/fanbox/public/images/plan/335879/cover/VyxOduCIButmyx17qGlmYOW4.jpeg
         // 为了避免跨域限制（会导致这个 img 无法绘制到 canvas 上），需要将其转换为 blob URL。
-        // 对 chrome-extension:// 协议的本地资源也需要采用同样的方法，因为这种 URL 不能作为 img 的 src，会报错。
-        if (url.startsWith('http') || url.startsWith('chrome-extension://')) {
+        // 对浏览器扩展协议的本地资源也需要采用同样的方法，因为这种 URL 不能作为 img 的 src，会报错。
+        if (url.startsWith('http') ||
+            url.startsWith('chrome-extension://') ||
+            url.startsWith('moz-extension://')) {
             // const fetchOptions = url.startsWith('http') ? { credentials: 'same-origin' } : {}
             const res = await fetch(url, { credentials: 'same-origin' });
             const blob = await res.blob();
@@ -6332,13 +6326,13 @@ const saveFanCard = new SaveFanCard();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/ShowSkipCount.ts":
+/***/ "./src/ts/download/ShowSkipCount.ts"
 /*!******************************************!*\
   !*** ./src/ts/download/ShowSkipCount.ts ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -6389,13 +6383,13 @@ class ShowSkipCount {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/download/ShowStatusOnTitle.ts":
+/***/ "./src/ts/download/showStatusOnTitle.ts"
 /*!**********************************************!*\
-  !*** ./src/ts/download/ShowStatusOnTitle.ts ***!
+  !*** ./src/ts/download/showStatusOnTitle.ts ***!
   \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _PageType__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../PageType */ "./src/ts/PageType.ts");
@@ -6556,13 +6550,13 @@ class ShowStatusOnTitle {
 new ShowStatusOnTitle();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/langText.ts":
+/***/ "./src/ts/langText.ts"
 /*!****************************!*\
   !*** ./src/ts/langText.ts ***!
   \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -8528,13 +8522,13 @@ Firefox 브라우저는 Firefox Add-ons에서 설치할 수 있습니다.<br><a 
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/setting/Form.ts":
+/***/ "./src/ts/setting/Form.ts"
 /*!********************************!*\
   !*** ./src/ts/setting/Form.ts ***!
   \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _EVT__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../EVT */ "./src/ts/EVT.ts");
@@ -8764,13 +8758,13 @@ class Form {
 new Form();
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/setting/FormSettings.ts":
+/***/ "./src/ts/setting/FormSettings.ts"
 /*!****************************************!*\
   !*** ./src/ts/setting/FormSettings.ts ***!
   \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -8944,13 +8938,13 @@ class FormSettings {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/setting/NameRuleManager.ts":
+/***/ "./src/ts/setting/NameRuleManager.ts"
 /*!*******************************************!*\
   !*** ./src/ts/setting/NameRuleManager.ts ***!
   \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -9055,13 +9049,13 @@ const nameRuleManager = new NameRuleManager();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/setting/Options.ts":
+/***/ "./src/ts/setting/Options.ts"
 /*!***********************************!*\
   !*** ./src/ts/setting/Options.ts ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -9210,13 +9204,13 @@ const options = new Options();
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/setting/SaveNamingRule.ts":
+/***/ "./src/ts/setting/SaveNamingRule.ts"
 /*!******************************************!*\
   !*** ./src/ts/setting/SaveNamingRule.ts ***!
   \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -9342,13 +9336,13 @@ class SaveNamingRule {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/setting/Settings.ts":
+/***/ "./src/ts/setting/Settings.ts"
 /*!************************************!*\
   !*** ./src/ts/setting/Settings.ts ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -9664,13 +9658,13 @@ const setSetting = self.setSetting.bind(self);
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/utils/DateFormat.ts":
+/***/ "./src/ts/utils/DateFormat.ts"
 /*!************************************!*\
   !*** ./src/ts/utils/DateFormat.ts ***!
   \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -9751,13 +9745,13 @@ DateFormat.Months = [
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/utils/IndexedDB.ts":
+/***/ "./src/ts/utils/IndexedDB.ts"
 /*!***********************************!*\
   !*** ./src/ts/utils/IndexedDB.ts ***!
   \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -10006,13 +10000,13 @@ class IndexedDB {
 
 
 
-/***/ }),
+/***/ },
 
-/***/ "./src/ts/utils/Utils.ts":
+/***/ "./src/ts/utils/Utils.ts"
 /*!*******************************!*\
   !*** ./src/ts/utils/Utils.ts ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -10272,28 +10266,34 @@ Utils.fullWidthDict = [
 
 
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
 /******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
+/******/ 	const __webpack_module_cache__ = {};
 /******/ 	
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		const cachedModule = __webpack_module_cache__[moduleId];
 /******/ 		if (cachedModule !== undefined) {
 /******/ 			return cachedModule.exports;
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 		const module = __webpack_module_cache__[moduleId] = {
 /******/ 			// no module.id needed
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
+/******/ 		if (!(moduleId in __webpack_modules__)) {
+/******/ 			delete __webpack_module_cache__[moduleId];
+/******/ 			const e = new Error("Cannot find module '" + moduleId + "'");
+/******/ 			e.code = 'MODULE_NOT_FOUND';
+/******/ 			throw e;
+/******/ 		}
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Return the exports of the module
@@ -10305,7 +10305,7 @@ Utils.fullWidthDict = [
 /******/ 	(() => {
 /******/ 		// getDefaultExport function for compatibility with non-harmony modules
 /******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
+/******/ 			const getter = module && module.__esModule ?
 /******/ 				() => (module['default']) :
 /******/ 				() => (module);
 /******/ 			__webpack_require__.d(getter, { a: getter });
@@ -10315,11 +10315,26 @@ Utils.fullWidthDict = [
 /******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
+/******/ 		// define getter/value functions for harmony exports
 /******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			if(Array.isArray(definition)) {
+/******/ 				var i = 0;
+/******/ 				while(i < definition.length) {
+/******/ 					var key = definition[i++];
+/******/ 					var binding = definition[i++];
+/******/ 					if(!__webpack_require__.o(exports, key)) {
+/******/ 						if(binding === 0) {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, value: definition[i++] });
+/******/ 						} else {
+/******/ 							Object.defineProperty(exports, key, { enumerable: true, get: binding });
+/******/ 						}
+/******/ 					} else if(binding === 0) { i++; }
+/******/ 				}
+/******/ 			} else {
+/******/ 				for(var key in definition) {
+/******/ 					if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 						Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 					}
 /******/ 				}
 /******/ 			}
 /******/ 		};
@@ -10334,7 +10349,7 @@ Utils.fullWidthDict = [
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
 /******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			if(Symbol.toStringTag) {
 /******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
@@ -10342,7 +10357,7 @@ Utils.fullWidthDict = [
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
+let __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
 /*!***************************!*\
@@ -10360,7 +10375,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tip__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_Tip__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _OutputPanel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./OutputPanel */ "./src/ts/OutputPanel.ts");
 /* harmony import */ var _download_DownloadControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./download/DownloadControl */ "./src/ts/download/DownloadControl.ts");
-/* harmony import */ var _download_ShowStatusOnTitle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./download/ShowStatusOnTitle */ "./src/ts/download/ShowStatusOnTitle.ts");
+/* harmony import */ var _download_showStatusOnTitle__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./download/showStatusOnTitle */ "./src/ts/download/showStatusOnTitle.ts");
 /* harmony import */ var _download_Resume__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./download/Resume */ "./src/ts/download/Resume.ts");
 /* harmony import */ var _ShowNotification__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ShowNotification */ "./src/ts/ShowNotification.ts");
 /* harmony import */ var _ShowHowToUse__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ShowHowToUse */ "./src/ts/ShowHowToUse.ts");

@@ -2,9 +2,6 @@
 
 - [簡介](#簡介)
 - [安裝](#安裝)
-  - [在線安裝](#在線安裝)
-  - [離線安裝](#離線安裝)
-  - [在 Android 上使用](#在-android-上使用)
 - [如何使用](#如何使用)
 - [支持和贊助](#支持和贊助)
 
@@ -14,7 +11,7 @@
 
 # 簡介
 
-這是一個 Chrome 瀏覽器擴充功能，用於批次下載 Pixiv Fanbox 上的檔案。
+這是一個 Firefox 瀏覽器擴充功能，用於批次下載 Pixiv Fanbox 上的檔案。
 
 支援過濾檔案類型、自訂檔名，支援多種語言。
 
@@ -24,27 +21,16 @@
 
 # 安裝
 
-推薦使用 Chrome 或 Edge 瀏覽器。
+需要 Firefox 142 或更高版本。開發版本可在 `about:debugging#/runtime/this-firefox` 中選擇「暫時載入附加元件」，然後選取 `dist/manifest.json` 來安裝。
 
-## 在線安裝
+若要從原始碼建置，請安裝 Node.js 與 npm，然後執行：
 
-您可以從 Chrome Web Store 安裝本擴展程式：
+```sh
+npm install
+npm run build
+```
 
-[Pixiv Fanbox Downloader](https://chrome.google.com/webstore/detail/pixiv-fanbox-downloader/ihnfpdchjnmlehnoeffgcbakfmdjcckn)
-
-## 離線安裝
-
-您可以參考 Pixiv 下載器的離線安裝教程：
-[離線安裝](https://xuejianxianzun.github.io/PBDWiki/#/zh-tw/%E7%A6%BB%E7%B7%9A%E5%AE%89%E8%A3%9D)
-
-只有一點不同：上述教程中會要求您下載 Pixiv 下載器的 zip 文件，請改為下載 Fanbox 下載器的 zip 文件即可。您可以在本倉庫的 [releases 頁面](https://github.com/xuejianxianzun/PixivFanboxDownloader/releases) 下載 pixivfanboxDownloader.zip。
-
-## 在 Android 上使用
-
-您可以參考以下教程：
-[在 Microsoft Edge Canary 瀏覽器上安裝](https://xuejianxianzun.github.io/PBDWiki/#/zh-tw/MicrosoftEdgeCanary)
-
-只有一點不同：上述教程中會要求您下載 Pixiv 下載器的 crx 文件，請改為下載 Fanbox 下載器的 crx 文件即可。您可以在本倉庫的 [releases 頁面](https://github.com/xuejianxianzun/PixivFanboxDownloader/releases) 下載 Pixiv-Fanbox-Downloader.crx。
+若要永久安裝到 Firefox 正式版，產生的 ZIP 必須經過 Mozilla 簽署。
 
 # 如何使用
 

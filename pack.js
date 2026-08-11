@@ -4,7 +4,8 @@ const path = require('path')
 const copy = require('recursive-copy')
 const archiver = require('archiver')
 
-const packName = 'PixivFanboxDownloader'
+const manifest = require('./src/manifest.json')
+const packName = `PixivFanboxDownloader-firefox-${manifest.version}.zip`
 
 // 复制一些文件到 dist 目录
 async function copys() {
@@ -35,36 +36,46 @@ async function copys() {
 
 // 打包 dist 目录
 function pack() {
-  const zipName = path.resolve(__dirname, packName + '.zip')
-  const output = fs.createWriteStream(zipName)
+  return new Promise((resolve, reject) => {
+    const zipName = path.resolve(__dirname, packName)
+    const output = fs.createWriteStream(zipName)
 
-  const archive = archiver('zip', {
-    zlib: { level: 9 }, // Sets the compression level.
+    const archive = archiver('zip', {
+      zlib: { level: 9 }, // Sets the compression level.
+    })
+
+    archive.on('error', reject)
+    output.on('error', reject)
+
+    output.on('close', () => {
+      console.log(`Pack success: ${packName}`)
+      resolve()
+    })
+
+    // pipe archive data to the file
+    archive.pipe(output)
+
+    // Firefox packages must contain manifest.json at the root of the archive.
+    archive.directory('dist', false)
+
+    archive.finalize()
   })
-
-  archive.on('error', function (err) {
-    throw err
-  })
-
-  archive.on('finish', () => {
-    console.log(`Pack success`)
-  })
-
-  // pipe archive data to the file
-  archive.pipe(output)
-
-  // 添加文件夹
-  archive.directory('dist', packName)
-
-  archive.finalize()
 }
 
 // 构建
 async function build() {
-  await copys()
-  pack()
+  const copyOnly = process.argv.includes('--copy-only')
+  const packageOnly = process.argv.includes('--package-only')
+
+  if (!packageOnly) {
+    await copys()
+  }
+  if (!copyOnly) {
+    await pack()
+  }
 }
 
-build()
-
-console.log('Start pack')
+build().catch((error) => {
+  console.error(error)
+  process.exitCode = 1
+})

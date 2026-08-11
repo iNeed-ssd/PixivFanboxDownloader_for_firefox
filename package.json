@@ -1,16 +1,18 @@
 {
   "name": "pixiv-fanbox-downloader",
   "version": "4.9.4",
-  "description": "Pixiv Fanbox Downloader",
-  "repository": "https://github.com/xuejianxianzun/PixivFanboxDownloader",
+  "description": "Pixiv Fanbox Downloader for Firefox",
+  "repository": "https://github.com/iNeed-ssd/PixivFanboxDownloader_for_firefox",
   "author": "xuejianxianzun",
   "license": "GPL-3.0-or-later",
   "scripts": {
     "less": "lessc -x ./src/style/style.less ./dist/style/style.css",
     "ts": "webpack --config ./webpack.conf.js",
-    "fmt": "prettier -c --write \"src\\ts\\**\" && prettier -c --write \"src\\style\\**\"",
-    "pre-build": "npm run ts && npm run less && npm run fmt",
-    "build": "npm run pre-build && node ./pack.js"
+    "fmt": "prettier --write \"src/ts/**/*.ts\" \"src/style/**/*.{less,css}\"",
+    "pre-build": "npm run ts && npm run less",
+    "build": "npm run pre-build && node ./pack.js && npm run lint:firefox",
+    "start:firefox": "npm run pre-build && node ./pack.js --copy-only && web-ext run --source-dir ./dist",
+    "lint:firefox": "web-ext lint --source-dir ./dist"
   },
   "devDependencies": {
     "@types/chrome": "^0.1.1",
@@ -20,10 +22,13 @@
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "less": "4.8.1",
+    "prettier": "3.9.6",
     "recursive-copy": "^2.0.14",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
+    "web-ext": "10.5.0",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   }

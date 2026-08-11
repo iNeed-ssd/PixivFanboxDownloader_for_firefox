@@ -2,9 +2,9 @@
 
 - [Introduction](#introduction)
 - [Installation](#installation)
-  - [Online Installation](#online-installation)
-  - [Offline Installation](#offline-installation)
-  - [Using on Android](#using-on-android)
+  - [Temporary installation](#temporary-installation)
+  - [Build from source](#build-from-source)
+  - [Permanent installation](#permanent-installation)
 - [How to Use](#how-to-use)
 - [Patreon](#patreon)
 
@@ -14,7 +14,8 @@
 
 # Introduction
 
-This is a Chrome browser extension for batch downloading files on Pixiv Fanbox.
+This is the Firefox port of Pixiv Fanbox Downloader, a browser extension for
+batch downloading files on Pixiv Fanbox.
 
 Supports filtering file types, custom file names, and multiple languages.
 
@@ -24,27 +25,38 @@ Supports filtering file types, custom file names, and multiple languages.
 
 # Installation
 
-We recommend using Chrome or Edge browsers.
+Firefox 142 or newer is required.
 
-## Online Installation
+## Temporary installation
 
-You can install this extension from the Chrome Web Store:
+1. Open `about:debugging#/runtime/this-firefox` in Firefox.
+2. Select **Load Temporary Add-on**.
+3. Select `dist/manifest.json` from this repository.
 
-[Pixiv Fanbox Downloader](https://chrome.google.com/webstore/detail/pixiv-fanbox-downloader/ihnfpdchjnmlehnoeffgcbakfmdjcckn)
+The temporary installation is removed when Firefox closes.
 
-## Offline Installation
+## Build from source
 
-You can refer to the offline installation tutorial for the Pixiv Downloader:
-[Offline Installation](https://xuejianxianzun.github.io/PBDWiki/#/en/OfflineInstallation)
+Node.js and npm are required.
 
-There is only one difference: the tutorial above will ask you to download the zip file for the Pixiv Downloader. Instead, download the zip file for the Fanbox Downloader. You can download pixivfanboxDownloader.zip from the [releases page](https://github.com/xuejianxianzun/PixivFanboxDownloader/releases) of this repository.
+```sh
+npm install
+npm run build
+```
 
-## Using on Android
+The build produces `PixivFanboxDownloader-firefox-<version>.zip`, with the
+extension manifest at the archive root. Run `npm run start:firefox` to build
+and launch the extension in a temporary Firefox profile. Run
+`npm run lint:firefox` to validate the built extension with Mozilla's
+`web-ext` tooling.
 
-You can refer to this tutorial:
-[Installing on Microsoft Edge Canary Browser](https://xuejianxianzun.github.io/PBDWiki/#/en/MicrosoftEdgeCanary)
+## Permanent installation
 
-There is only one difference: the tutorial above will ask you to download the crx file for the Pixiv Downloader. Instead, download the crx file for the Fanbox Downloader. You can download Pixiv-Fanbox-Downloader.crx from the [releases page](https://github.com/xuejianxianzun/PixivFanboxDownloader/releases) of this repository.
+Regular Firefox releases only install add-ons signed by Mozilla. Submit the
+generated ZIP to [Firefox Add-ons](https://addons.mozilla.org/developers/) for
+signing or publication; an unsigned development ZIP can only be loaded
+temporarily (or used with a Firefox development build configured for unsigned
+extensions).
 
 # How to Use
 

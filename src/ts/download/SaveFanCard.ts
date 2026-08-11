@@ -160,8 +160,12 @@ class SaveFanCard {
     // 粉丝卡的背景图是保存在 pixiv 上的，例如：
     // https://pixiv.pximg.net/c/1280x800_90_a2_g5/fanbox/public/images/plan/335879/cover/VyxOduCIButmyx17qGlmYOW4.jpeg
     // 为了避免跨域限制（会导致这个 img 无法绘制到 canvas 上），需要将其转换为 blob URL。
-    // 对 chrome-extension:// 协议的本地资源也需要采用同样的方法，因为这种 URL 不能作为 img 的 src，会报错。
-    if (url.startsWith('http') || url.startsWith('chrome-extension://')) {
+    // 对浏览器扩展协议的本地资源也需要采用同样的方法，因为这种 URL 不能作为 img 的 src，会报错。
+    if (
+      url.startsWith('http') ||
+      url.startsWith('chrome-extension://') ||
+      url.startsWith('moz-extension://')
+    ) {
       // const fetchOptions = url.startsWith('http') ? { credentials: 'same-origin' } : {}
       const res = await fetch(url, { credentials: 'same-origin' })
       const blob = await res.blob()
