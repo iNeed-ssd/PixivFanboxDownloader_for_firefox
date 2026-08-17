@@ -12,30 +12,13 @@ import { settings } from './setting/Settings'
 import { log } from './Log'
 import { lang } from './Lang'
 import { msgBox } from './MsgBox'
-
-type Dict = {
-  [key in ServiceProvider]: string
-}
+import { Tools } from './Tools'
+import { renderCommentsText } from './RenderCommentsText'
 
 type EmbedDataArr = [ServiceProvider | VideoProvider, string][]
 
 class SaveData {
-  // 嵌入的文件只支持指定的网站，每个网站有固定的前缀
-  private readonly providerDict: Dict = {
-    youtube: 'https://www.youtube.com/watch?v=',
-    fanbox: 'https://www.fanbox.cc/',
-    gist: 'https://gist.github.com/',
-    soundcloud: 'https://soundcloud.com/',
-    vimeo: 'https://player.vimeo.com/video/',
-    twitter: 'https://twitter.com/i/web/status/',
-    google_forms: 'https://docs.google.com/forms/d/e/',
-  }
-
   private readonly extractTextReg = new RegExp(/<[^<>]+>/g)
-
-  protected readonly matchImgSrc = new RegExp(
-    /(?<=src=")https.*?(jpeg|jpg|png|gif|bmp)/g,
-  )
 
   public receive(data: PostBody) {
     // console.log(data)
@@ -68,10 +51,13 @@ class SaveData {
       files: [],
       textContent: {
         fileID: '',
-        name: 'links-' + data.id,
+        name: data.id,
         ext: 'txt',
         size: null,
         index: 0,
+        // text 里的内容有两个来源：外链和正文文本。
+        // 在这个模块里，text 里保存的内容不会受“保存投稿中的文字”设置的影响。虽然这个设置可以选择纯文本或者 HTML，但是这个模块里的 text 的内容总是值为“纯文本”时的内容。
+        // 如果这个设置的值是 HTML，那么会在下载时生成真正的 HTML 代码。此时并不会使用这个模块里的 text 内容。
         text: [],
         url: '',
         retryUrl: null,
@@ -91,7 +77,7 @@ class SaveData {
       if (cover) {
         const { name, ext } = this.getUrlNameAndExt(cover)
         const r: FileResult = {
-          fileID: this.createFileId(),
+          fileID: Tools.createFileId(),
           name,
           ext,
           size: null,
@@ -114,6 +100,8 @@ class SaveData {
           lang.transl('_价格限制') +
           ` ${fee}`,
       )
+      // 评论是投稿级别的数据，不依赖正文，也可以保存
+      renderCommentsText.render(result, data)
       if (result.files.length > 0) {
         store.addResult(result)
       }
@@ -133,7 +121,7 @@ class SaveData {
       if (text) {
         const links = this.getTextLinks(text)
         result.textContent.text = result.textContent.text.concat(links)
-        result.textContent.fileID = this.createFileId()
+        result.textContent.fileID = Tools.createFileId()
 
         // 保存文章正文里的文字
         if (settings.saveText) {
@@ -179,7 +167,7 @@ class SaveData {
       for (const link of linkTexts) {
         const links = this.getTextLinks(link)
         result.textContent.text = result.textContent.text.concat(links)
-        result.textContent.fileID = this.createFileId()
+        result.textContent.fileID = Tools.createFileId()
       }
 
       // 如果有链接，则添加一个空字符串，使其占据一行
@@ -225,7 +213,7 @@ class SaveData {
       }
       const embedLinks = this.getEmbedLinks(embedDataArr, data.id)
       result.textContent.text = result.textContent.text.concat(embedLinks)
-      result.textContent.fileID = this.createFileId()
+      result.textContent.fileID = Tools.createFileId()
 
       // 保存嵌入的 URL，只能保存到文本
       if (settings.saveLink) {
@@ -260,7 +248,7 @@ class SaveData {
           result.textContent.text = result.textContent.text.concat(
             urlArr.join('\n\n'),
           )
-          result.textContent.fileID = this.createFileId()
+          result.textContent.fileID = Tools.createFileId()
         }
       }
     }
@@ -342,16 +330,35 @@ class SaveData {
       ]
       const embedLinks = this.getEmbedLinks(embedDataArr, data.id)
       result.textContent.text = result.textContent.text.concat(embedLinks)
-      result.textContent.fileID = this.createFileId()
+      result.textContent.fileID = Tools.createFileId()
     }
 
-    if (result.textContent.text.length > 0) {
-      const findURL = result.textContent.text.some((text) =>
-        text.includes('https://'),
-      )
-      if (findURL) {
-        msgBox.once('tipLinktext', lang.transl('_提示有外链保存到txt'))
-      }
+    // 保存投稿中的评论
+    // 评论不依赖投稿正文，正文之外的信息（链接等）可能包含在评论里
+    renderCommentsText.render(result, data)
+
+    if (settings.saveText && settings.textFormat === 'html') {
+      result.textContent.ext = 'html'
+      result.textContent.htmlData = data
+      result.textContent.fileID ||= Tools.createFileId()
+    }
+
+    // 检查文本里是否含有网址
+    let findURL = result.textContent.text.some((text) =>
+      /https?:\/\//.test(text),
+    )
+    if (findURL) {
+      // 如果有外链，则在文件名前面添加 links-
+      result.textContent.name = 'links-' + result.textContent.name
+      msgBox.once('tipLinktext', lang.transl('_提示会把外链保存到文件'))
+    }
+
+    if (
+      result.textContent.ext === 'txt' &&
+      result.textContent.text.length > 0
+    ) {
+      // 对于 TXT 文件，在内容的开头添加文章标题
+      result.textContent.text.unshift(data.title + '\r\n')
     }
 
     store.addResult(result)
@@ -434,24 +441,10 @@ class SaveData {
 
     for (const data of dataArr) {
       const [serviceProvider, contentId] = data
-      let link = this.providerDict[serviceProvider] + contentId
-      // 谷歌表单需要在链接后面添加特定后缀
-      if (serviceProvider === 'google_forms') {
-        link = link + '/viewform'
-      }
-      links.push(link)
+      links.push(Tools.getEmbedUrl(serviceProvider, contentId))
     }
 
     return links
-  }
-
-  // 下载器自己生成的 txt 文件没有 id，所以这里需要自己给它生成一个 id
-  // 使用时间戳并不保险，因为有时候代码执行太快，会生成重复的时间戳。所以后面加上随机字符
-  private createFileId() {
-    return (
-      new Date().getTime().toString() +
-      Math.random().toString(16).replace('.', '')
-    )
   }
 
   // 传入文件 url，提取文件名和扩展名

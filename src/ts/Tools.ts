@@ -1,4 +1,9 @@
+import { ServiceProvider, VideoProvider } from './CrawlResult'
 import { lang } from './Lang'
+
+type Dict = {
+  [key in ServiceProvider]: string
+}
 
 class Tools {
   static getUserId() {
@@ -86,6 +91,50 @@ class Tools {
     }
 
     return result
+  }
+
+  // 嵌入的文件只支持指定的网站，每个网站有固定的前缀
+  static readonly providerDict: Dict = {
+    youtube: 'https://www.youtube.com/watch?v=',
+    fanbox: 'https://www.fanbox.cc/',
+    gist: 'https://gist.github.com/',
+    soundcloud: 'https://soundcloud.com/',
+    vimeo: 'https://player.vimeo.com/video/',
+    twitter: 'https://twitter.com/i/web/status/',
+    google_forms: 'https://docs.google.com/forms/d/e/',
+  }
+
+  static getEmbedUrl(
+    serviceProvider: ServiceProvider | VideoProvider,
+    contentId: string,
+  ) {
+    let url = this.providerDict[serviceProvider] + contentId
+    if (serviceProvider === 'google_forms') {
+      url += '/viewform'
+    }
+    return url
+  }
+
+  static escapeHtml(value: string) {
+    return value.replace(/[&<>"']/g, (character) => {
+      const entities: { [key: string]: string } = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      }
+      return entities[character]
+    })
+  }
+
+  // 下载器自己生成的 txt 文件没有 id，所以这里需要自己给它生成一个 id
+  // 使用时间戳并不保险，因为有时候代码执行太快，会生成重复的时间戳。所以后面加上随机字符
+  static createFileId() {
+    return (
+      new Date().getTime().toString() +
+      Math.random().toString(16).replace('.', '')
+    )
   }
 }
 

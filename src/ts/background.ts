@@ -82,7 +82,7 @@ async function startDownload(
     {
       url: msg.fileUrl,
       filename: msg.fileName,
-      conflictAction: 'uniquify',
+      conflictAction: msg.conflictAction || 'uniquify',
       saveAs: false,
     },
     (id) => {

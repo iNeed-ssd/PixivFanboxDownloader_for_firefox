@@ -1,6 +1,6 @@
 {
   "name": "Pixiv Fanbox Downloader for Firefox",
-  "version": "4.9.4",
+  "version": "5.0.0",
   "manifest_version": 3,
   "description": "Batch download files from Pixiv Fanbox in Firefox.",
   "icons": {

@@ -8,11 +8,12 @@ interface CommentData {
   likeCount: number
   isLiked: boolean
   isOwn: boolean
+  // 用户被删除时，user 可能为 null
   user: {
     userId: string
     name: string
     iconUrl: string
-  }
+  } | null
   replies: CommentData[]
 }
 
@@ -120,12 +121,18 @@ interface BlocksDataEmbed {
   embedId: string
 }
 
+interface BlocksDataUrlEmbed {
+  type: 'url_embed'
+  urlEmbedId: string
+}
+
 // article 投稿里所有可能出现的段落信息
 type AllBlocks =
   | BlocksDataText
   | BlocksDataFile
   | BlocksDataImage
   | BlocksDataEmbed
+  | BlocksDataUrlEmbed
 
 interface EmbedData {
   id: string
@@ -430,6 +437,7 @@ interface ListFollowing {
 }
 
 export {
+  CommentData,
   PostBody,
   Post,
   PostListItem,
@@ -443,7 +451,6 @@ export {
   EmbedData,
   VideoData,
   CreatorData,
-  Creator,
   AllSupportingPlan,
   SupportInfo,
   Plan,

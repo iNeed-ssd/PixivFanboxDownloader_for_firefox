@@ -23,12 +23,12 @@ const langText = {
     'Задача начата',
   ],
   _抓取结果为零: [
-    '抓取完毕，但没有找到符合筛选条件的文件。',
-    '擷取完畢，但沒有找到符合篩選條件的檔案。',
-    'Crawl finished but did not find files that match the filter criteria.',
-    'フィルタ条件で検索しましたが、該当するファイルは見つかりませんでした。',
-    '긁어오기가 완료되었지만 필터 조건과 일치하는 파일을 찾지 못했습니다.',
-    'Сканирование завершено, но файлы, соответствующие условиям фильтра, не найдены.',
+    '抓取完毕，但是没有找到符合筛选条件的文件。通常这是因为投稿或文件不符合某些筛选条件的要求。你可以在顶部日志里查看详细信息。',
+    '擷取完畢，但是沒有找到符合篩選條件的檔案。通常這是因為投稿或檔案不符合某些篩選條件。你可以在頂部日誌中查看詳細資訊。',
+    'Crawling is complete, but no files matching the filter criteria were found. This is usually because the post or files do not meet one or more filter conditions. You can view the details in the log at the top.',
+    'クロールが完了しましたが、フィルター条件に一致するファイルは見つかりませんでした。通常、投稿またはファイルがいずれかのフィルター条件を満たしていないことが原因です。詳細は上部のログで確認できます。',
+    '크롤링이 완료되었지만 필터 조건에 맞는 파일을 찾지 못했습니다. 일반적으로 게시물 또는 파일이 하나 이상의 필터 조건을 충족하지 않아서입니다. 자세한 내용은 상단 로그에서 확인할 수 있습니다.',
+    'Сканирование завершено, но файлы, соответствующие условиям фильтра, не найдены. Обычно это происходит потому, что публикация или файлы не соответствуют одному или нескольким условиям фильтра. Подробности можно посмотреть в журнале в верхней части страницы.',
   ],
   _当前任务尚未完成: [
     '当前任务尚未完成',
@@ -518,6 +518,33 @@ So the file name set by the downloader is lost, and the file name becomes the la
     '게시물의 <span class="key">텍스트</span> 저장',
     'Сохранить <span class="key">текст</span> в публикациях',
   ],
+  _格式: [`格式：`, `格式：`, `Format:`, `形式：`, `형식:`, `Формат:`],
+  _保存投稿中的文字的说明: [
+    `你可以设置是否保存投稿的正文文本。<br><br>有两种格式可以选择：<br>1. TXT：由于 TXT 文件里只能保存纯文本，所以查看它时不会显示投稿里的图片、视频、超链接等内容。<br>2. HTML：查看时可以显示投稿里的图片、视频、超链接等内容，阅读体验更好。<br><br>另外，由于每篇投稿的外部链接、正文、评论都会保存到同一个文件里，所以这个设置里的格式就是这些内容的保存格式。<br>PS：如果你关闭了这个设置，那么外部链接和评论总是会保存到 TXT 文件里。`,
+    `你可以設定是否儲存投稿的正文文字。<br><br>有兩種格式可以選擇：<br>1. TXT：由於 TXT 檔案只能儲存純文字，查看時不會顯示投稿中的圖片、影片、超連結等內容。<br>2. HTML：查看時可以顯示投稿中的圖片、影片、超連結等內容，閱讀體驗更好。<br><br>此外，由於每篇投稿的外部連結、正文、評論都會儲存在同一個檔案裡，所以此設定中的格式就是這些內容的儲存格式。<br>PS：如果你關閉了這個設定，外部連結和評論一律會儲存到 TXT 檔案裡。`,
+    `You can choose whether to save the main text of posts.<br><br>There are two available formats:<br>1. TXT: Because TXT files can only contain plain text, images, videos, hyperlinks, and other content in the post will not be displayed when viewing them.<br>2. HTML: Images, videos, hyperlinks, and other content in the post can be displayed when viewing it, providing a better reading experience.<br><br>In addition, each post's external links, main text, and comments are saved in the same file, so this setting determines the format used to save all of that content.<br>PS: If you turn off this setting, external links and comments are always saved in a TXT file.`,
+    `投稿の本文テキストを保存するかどうかを設定できます。<br><br>選択できる形式は2種類あります。<br>1. TXT：TXT ファイルにはプレーンテキストしか保存できないため、投稿内の画像、動画、ハイパーリンクなどは表示されません。<br>2. HTML：投稿内の画像、動画、ハイパーリンクなどを表示できるため、より快適に閲覧できます。<br><br>また、各投稿の外部リンク、本文、コメントは同じファイルに保存されるため、この設定の形式はこれらの内容の保存形式になります。<br>PS：この設定をオフにした場合、外部リンクとコメントは常に TXT ファイルに保存されます。`,
+    `게시물의 본문 텍스트를 저장할지 설정할 수 있습니다.<br><br>선택할 수 있는 형식은 두 가지입니다.<br>1. TXT: TXT 파일에는 일반 텍스트만 저장할 수 있으므로 게시물의 이미지, 동영상, 하이퍼링크 등의 내용은 볼 때 표시되지 않습니다.<br>2. HTML: 게시물의 이미지, 동영상, 하이퍼링크 등의 내용을 표시할 수 있어 더 나은 읽기 경험을 제공합니다.<br><br>또한 각 게시물의 외부 링크, 본문, 댓글은 같은 파일에 저장되므로 이 설정의 형식이 이러한 내용의 저장 형식이 됩니다.<br>PS: 이 설정을 끄면 외부 링크와 댓글은 항상 TXT 파일에 저장됩니다.`,
+    `Вы можете выбрать, сохранять ли основной текст публикаций.<br><br>Доступны два формата:<br>1. TXT: поскольку в TXT-файлах можно сохранить только обычный текст, изображения, видео, гиперссылки и другое содержимое публикации при просмотре не будут отображаться.<br>2. HTML: при просмотре могут отображаться изображения, видео, гиперссылки и другое содержимое публикации, что делает чтение удобнее.<br><br>Кроме того, внешние ссылки, основной текст и комментарии каждой публикации сохраняются в одном файле, поэтому этот параметр определяет формат сохранения всего этого содержимого.<br>PS: если отключить этот параметр, внешние ссылки и комментарии всегда будут сохраняться в TXT-файл.`,
+  ],
+  _保存投稿中的评论: [
+    '保存投稿中的<span class="key">评论</span>',
+    '儲存投稿中的<span class="key">評論</span>',
+    'Save <span class="key">comments</span> in the posts',
+    '投稿の<span class="key">コメント</span>を保存',
+    '게시물의 <span class="key">댓글</span> 저장',
+    'Сохранить <span class="key">комментарии</span> в публикациях',
+  ],
+  _纯文本: [
+    '纯文本',
+    '純文字',
+    'Plain text',
+    'プレーンテキスト',
+    '일반 텍스트',
+    'Обычный текст',
+  ],
+  _HTML: ['HTML', 'HTML', 'HTML', 'HTML', 'HTML', 'HTML'],
+  _评论: ['评论', '評論', 'Comments', 'コメント', '댓글', 'Комментарии'],
   _抓取文件数量: [
     '已获取 {} 个文件',
     '已取得 {} 個檔案',
@@ -881,17 +908,17 @@ So the file name set by the downloader is lost, and the file name becomes the la
     'Поддержать меня',
   ],
   _赞助方式提示: [
-    `如果您觉得这个工具对您有帮助，可以考虑赞助我，谢谢！<br>
+    `如果您觉得这个工具对您有帮助，可以考虑赞助我，谢谢~<br>
     您可以在 Patreon 上赞助我：<br>
-    <a href="https://www.patreon.com/xuejianxianzun" target="_blank">https://www.patreon.com/xuejianxianzun</a><br><br>
+    <a href="https://www.patreon.com/xuejianxianzun" target="_blank">https://www.patreon.com/xuejianxianzun</a><br>
     中国大陆用户可以在“爱发电”上赞助我：<br>
-    <a href="https://afdian.com/a/xuejianxianzun" target="_blank">https://afdian.com/a/xuejianxianzun</a><br><br>
+    <a href="https://afdian.com/a/xuejianxianzun" target="_blank">https://afdian.com/a/xuejianxianzun</a><br>
     也可以扫描二维码：<br>
     <a href="https://github.com/xuejianxianzun/PixivBatchDownloader#%E6%94%AF%E6%8C%81%E5%92%8C%E6%8D%90%E5%8A%A9" target="_blank">在 Github 上查看二维码</a>
     `,
-    `如果您覺得這個工具對您有幫助，可以考慮贊助我，謝謝！<br>
+    `如果您覺得這個工具對您有幫助，可以考慮贊助我，謝謝~<br>
     您可以在 Patreon 上贊助我：<br>
-    <a href="https://www.patreon.com/xuejianxianzun" target="_blank">https://www.patreon.com/xuejianxianzun</a><br><br>
+    <a href="https://www.patreon.com/xuejianxianzun" target="_blank">https://www.patreon.com/xuejianxianzun</a><br>
     中國大陸使用者可以在“愛發電”上贊助我：<br>
     <a href="https://afdian.com/a/xuejianxianzun" target="_blank">https://afdian.com/a/xuejianxianzun</a>
     `,
@@ -1561,13 +1588,13 @@ So the file name set by the downloader is lost, and the file name becomes the la
     'Исправлена ошибка сканирования из-за изменений данных API.',
   ],
   _任一: ['任一', '任一', 'One', '何れか', '하나만', 'Любой'],
-  _提示有外链保存到txt: [
-    '这次的抓取结果里有一些外部链接，下载器会把它们保存到 TXT 文件里，请手动处理。',
-    '這次的抓取結果裡有一些外部連結，下載器會把它們儲存到 TXT 檔案裡，請手動處理。',
-    'There are some external links in the crawling results this time. The downloader will save them into TXT files. Please handle them manually.',
-    '今回のクロール結果には外部リンクがいくつか含まれます。ダウンローダーはそれらをTXTファイルに保存します。手動で処理してください。',
-    '이번에는 크롤링 결과에 외부 링크가 몇 개 있습니다. 다운로더가 이를 TXT 파일로 저장합니다. 수동으로 처리해 주세요.',
-    'В результатах сканирования на этот раз есть внешние ссылки. Загрузчик сохранит их в TXT-файлы. Пожалуйста, обработайте их вручную.',
+  _提示会把外链保存到文件: [
+    '这次的抓取结果里有一些网址，它们通常是外部链接。下载器会把它们保存到以“links-”开头的文件里，你可以手动处理。',
+    '這次的擷取結果裡有一些網址，它們通常是外部連結。下載器會把它們儲存到以「links-」開頭的檔案裡，你可以手動處理。',
+    'This crawl result contains some URLs, which are usually external links. The downloader will save them in a file whose name begins with "links-". You can handle them manually.',
+    '今回のクロール結果には、通常外部リンクである URL がいくつか含まれています。ダウンローダーはそれらを「links-」で始まるファイルに保存します。手動で処理できます。',
+    '이번 크롤링 결과에는 일반적으로 외부 링크인 URL이 일부 포함되어 있습니다. 다운로더는 이를 "links-"로 시작하는 파일에 저장하며, 수동으로 처리할 수 있습니다.',
+    'В результатах этого сканирования есть несколько URL-адресов, обычно это внешние ссылки. Загрузчик сохранит их в файл, имя которого начинается с "links-". Вы можете обработать их вручную.',
   ],
   _下载器会等待几分钟然后再继续抓取: [
     '下载器会等待几分钟，然后再继续抓取。',
@@ -1707,6 +1734,14 @@ So the file name set by the downloader is lost, and the file name becomes the la
     '1日のダウンロード<span class="key">ファイルサイズ</span>制限',
     '일일 다운로드 <span class="key">파일 크기</span> 제한',
     'Ограничение на <span class="key">размер</span> файлов для ежедневной загрузки',
+  ],
+  _达到每天下载的文件大小限制的说明: [
+    `每天下载的文件大小限制。<br><br>这是下载器的一个安全功能，目的是为了避免在一天内下载过多的文件，导致账号被封禁。默认值是 10 GB，这是一个相对安全的限制。达到限制之后，需要等到第二天才能继续下载。<br>如果你想现在就继续下载，可以在下载器界面的下半部分找到“每天下载的文件大小限制”设置，并关闭它。`,
+    `每天下載的檔案大小限制。<br><br>這是下載器的一項安全功能，目的是避免在一天內下載過多檔案，導致帳號被封禁。預設值為 10 GB，這是一個相對安全的限制。達到限制後，需要等到第二天才能繼續下載。<br>如果你想現在繼續下載，可以在下載器介面的下半部分找到「每天下載的檔案大小限制」設定，並將其關閉。`,
+    `Daily download file size limit.<br><br>This is a safety feature of the downloader, intended to prevent your account from being banned due to downloading too many files in one day. The default value is 10 GB, which is a relatively safe limit. Once the limit is reached, you need to wait until the next day to continue downloading.<br>If you want to continue downloading now, find the "Daily download file size limit" setting in the lower half of the downloader interface and turn it off.`,
+    `1日のダウンロードファイルサイズ制限。<br><br>これは、1日に過剰なファイルをダウンロードしてアカウントが停止されるのを防ぐための、ダウンローダーの安全機能です。デフォルト値は 10 GB で、比較的安全な制限です。制限に達した後は、翌日まで待ってからダウンロードを続行する必要があります。<br>今すぐダウンロードを続けたい場合は、ダウンローダー画面の下部にある「1日のダウンロードファイルサイズ制限」設定を見つけて無効にしてください。`,
+    `일일 다운로드 파일 크기 제한.<br><br>하루에 너무 많은 파일을 다운로드하여 계정이 정지되는 것을 방지하기 위한 다운로더의 안전 기능입니다. 기본값은 비교적 안전한 제한인 10 GB입니다. 제한에 도달한 후에는 다음 날까지 기다려야 다운로드를 계속할 수 있습니다.<br>지금 다운로드를 계속하려면 다운로더 화면 하단에서 "일일 다운로드 파일 크기 제한" 설정을 찾아 해제하세요.`,
+    `Ограничение на размер файлов для ежедневной загрузки.<br><br>Это функция безопасности загрузчика, предназначенная для предотвращения блокировки аккаунта из-за загрузки слишком большого количества файлов за один день. Значение по умолчанию — 10 ГБ, это относительно безопасное ограничение. После достижения лимита нужно дождаться следующего дня, чтобы продолжить загрузку.<br>Если вы хотите продолжить загрузку сейчас, найдите настройку «Ограничение на размер файлов для ежедневной загрузки» в нижней части интерфейса загрузчика и отключите её.`,
   ],
   _每天下载的文件大小限制的说明: [
     `每当下载完一个文件之后，下载器都会检查今天下载的文件的总体积。<br>
@@ -1939,14 +1974,40 @@ Firefox 브라우저는 Firefox Add-ons에서 설치할 수 있습니다.<br><a 
 Браузеры на базе Chromium, например Chrome и Edge, можно установить из Chrome Web Store:<br><a href="https://chromewebstore.google.com/detail/powerful-pixiv-downloader/dkndmhgdcmjdmkdonmbgjpijejdcilfh" target="_blank">Powerful Pixiv Downloader</a><br><br>
 Для Firefox его можно установить из Firefox Add-ons:<br><a href="https://addons.mozilla.org/en-US/firefox/addon/powerfulpixivdownloader/" target="_blank">Powerful Pixiv Downloader</a><br>`,
   ],
-  _更新说明4_9_3: [
-    `🐞Fanbox 的 API 变化导致下载器无法抓取文章列表，现在修复。`,
-    `🐞Fanbox 的 API 變化導致下載器無法抓取文章列表，現在修復。`,
-    `🐞The API change of Fanbox caused the downloader to fail to crawl the post list, now fixed.`,
-    `🐞Fanbox の API の変更により、ダウンローダーが投稿リストをクロールできなくなりましたが、現在修正されています。`,
-    `🐞Fanbox의 API 변경으로 인해 다운로더가 게시물 목록을 크롤링하지 못했지만 이제 수정되었습니다.`,
-    `🐞Изменение API Fanbox привело к тому, что загрузчик не смог сканировать список публикаций, теперь исправлено.`,
+  _更新说明5_0_0: [
+    `<strong>✨在保存投稿中的文字时，新增了 HTML 格式</strong><br>
+之前该设置只有 TXT 格式，查看时不会显示投稿里的图片、视频等内容。新增的 HTML 格式可以显示这些内容，阅读体验接近 Fanbox 的网页浏览效果。<br>
+感谢 <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> 提交了该功能。<br>
+<strong>✨新增设置：保存投稿中的评论</strong><br>
+感谢 <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> 提交了该功能。`,
+    `<strong>✨儲存投稿中的文字時，新增了 HTML 格式</strong><br>
+之前此設定只有 TXT 格式，查看時不會顯示投稿中的圖片、影片等內容。新增的 HTML 格式可以顯示這些內容，閱讀體驗接近 Fanbox 的網頁瀏覽效果。<br>
+感謝 <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> 提交了此功能。<br>
+<strong>✨新增設定：儲存投稿中的評論</strong><br>
+感謝 <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> 提交了此功能。`,
+    `<strong>✨ Added HTML format when saving text in posts</strong><br>
+Previously, this setting only supported TXT format, which did not display images, videos, and other content from posts when viewed. The new HTML format displays this content, offering a reading experience close to browsing Fanbox on the web.<br>
+Thanks to <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> for contributing this feature.<br>
+<strong>✨ New setting: Save comments in posts</strong><br>
+Thanks to <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> for contributing this feature.`,
+    `<strong>✨投稿内のテキスト保存に HTML 形式を追加</strong><br>
+以前はこの設定で TXT 形式しか選択できず、閲覧時に投稿内の画像、動画などは表示されませんでした。新しい HTML 形式ではこれらの内容を表示でき、Fanbox のウェブページに近い閲覧体験を得られます。<br>
+この機能を提供してくださった <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> に感謝します。<br>
+<strong>✨新しい設定：投稿内のコメントを保存</strong><br>
+この機能を提供してくださった <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> に感謝します。`,
+    `<strong>✨게시물의 텍스트를 저장할 때 HTML 형식 추가</strong><br>
+이전에는 이 설정에서 TXT 형식만 지원했으며, 볼 때 게시물의 이미지, 동영상 등의 내용이 표시되지 않았습니다. 새 HTML 형식은 이러한 내용을 표시할 수 있어 Fanbox 웹페이지를 보는 것과 가까운 읽기 경험을 제공합니다.<br>
+이 기능을 기여해 주신 <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a>님께 감사드립니다.<br>
+<strong>✨새 설정: 게시물의 댓글 저장</strong><br>
+이 기능을 기여해 주신 <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a>님께 감사드립니다.`,
+    `<strong>✨ Добавлен формат HTML при сохранении текста публикаций</strong><br>
+Ранее в этой настройке был доступен только формат TXT, при просмотре которого изображения, видео и другое содержимое публикаций не отображались. Новый формат HTML позволяет отображать это содержимое и делает чтение ближе к просмотру страницы Fanbox в браузере.<br>
+Спасибо <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> за добавление этой функции.<br>
+<strong>✨ Новая настройка: сохранять комментарии к публикациям</strong><br>
+Спасибо <a href="https://github.com/Eganchiyu" target="_blank">Eganchiyu</a> за добавление этой функции.`,
   ],
+  _说明: [`说明`, `說明`, `Explanation`, `説明`, `설명`, `Описание`],
+  _帮助: [`帮助`, `幫助`, `Help`, `ヘルプ`, `도움말`, `Справка`],
   _开始获取投稿列表: [
     `开始获取投稿列表`,
     `開始取得投稿清單`,
@@ -1955,6 +2016,16 @@ Firefox 브라우저는 Firefox Add-ons에서 설치할 수 있습니다.<br><a 
     `게시물 목록 가져오기 시작`,
     `Начать получать список публикаций`,
   ],
+  _没有找到投稿列表的提示: [
+    `没有找到投稿列表，可能是因为这个创作者没有任何投稿`,
+    `沒有找到投稿清單，可能是因為這位創作者沒有任何投稿`,
+    `No post list was found. This creator may not have any posts.`,
+    `投稿リストが見つかりませんでした。このクリエイターには投稿がない可能性があります。`,
+    `게시물 목록을 찾을 수 없습니다. 이 크리에이터에게는 게시물이 없을 수 있습니다.`,
+    `Список публикаций не найден. Возможно, у этого автора нет публикаций.`,
+  ],
 }
 
-export { langText }
+type LangTextKey = keyof typeof langText
+
+export { langText, LangTextKey }

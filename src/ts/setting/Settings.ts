@@ -75,6 +75,9 @@ interface XzSetting {
   postDateEnd: number
   saveLink: boolean
   saveText: boolean
+  textFormat: 'txt' | 'html'
+  /**是否保存投稿中的评论 */
+  saveComment: boolean
   userSetName: string
   autoStartDownload: boolean
   downloadThread: number
@@ -149,6 +152,8 @@ class Settings {
     postDateEnd: 1893456000000,
     saveLink: true,
     saveText: false,
+    textFormat: 'txt',
+    saveComment: false,
     userSetName: 'fanbox/{user}/{date}-{title}/{index}',
     autoStartDownload: true,
     downloadThread: 2,
@@ -164,7 +169,7 @@ class Settings {
     boldKeywords: true,
     namingRuleList: [],
     showNotificationAfterDownloadComplete: false,
-    zeroPadding: false,
+    zeroPadding: true,
     zeroPaddingLength: 3,
     deduplication: false,
     showHowToUse: true,
